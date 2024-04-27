@@ -1,10 +1,15 @@
-playGame();
+
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+
+rock.addEventListener("click", playRound);
+paper.addEventListener("click", playRound);
+scissors.addEventListener("click", playRound);
 
 function getComputerChoice()
 {
-    let choice = Math.floor(Math.random() * 3);
-
-    switch (choice)
+    switch (Math.floor(Math.random() * 3))
     {
         case 0:
             return "ROCK";
@@ -17,15 +22,11 @@ function getComputerChoice()
     }
 }
 
-function getHumanChoice()
+function playRound(e)
 {
-    let choice = prompt("Rock, paper, or scissors?");
+    let humanChoice = e.target.className.toUpperCase();
+    let computerChoice = getComputerChoice();
 
-    return choice.toUpperCase();
-}
-
-function playRound(humanChoice, computerChoice)
-{
     if ((humanChoice === "ROCK" && computerChoice === "SCISSORS") || (humanChoice === "PAPER" && computerChoice === "ROCK") || (humanChoice === "SCISSORS" && computerChoice === "PAPER"))
     {
         console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
