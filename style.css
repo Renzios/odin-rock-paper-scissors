@@ -9,12 +9,6 @@ body {
     gap: 8px;
 }
 
-.choices {
-    display: flex;
-
-    gap: 8px;
-}
-
 button {
     padding: 8px;
 
@@ -33,4 +27,10 @@ button {
 button:hover {
     background-color: #ffffff;
     color: black;
+}
+
+.choices {
+    display: flex;
+
+    gap: 8px;
 }
